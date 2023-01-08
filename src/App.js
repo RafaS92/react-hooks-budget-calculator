@@ -6,9 +6,9 @@ import { ExpenseList } from "./components/ExpenseList";
 import uuid from 'uuid/v4'
 
 const initialExpenses = [
-  {id:uuid(),charge:"rent",amount:1600},
-  {id:uuid(),charge:"car payment",amount:1600},
-  {id:uuid(),charge:"credit card bill",amount:1600}
+  {id:uuid(),charge:"rent",amount:400},
+  {id:uuid(),charge:"car payment",amount:1200},
+  {id:uuid(),charge:"credit card bill",amount:600}
 ]
 
 function App() {
