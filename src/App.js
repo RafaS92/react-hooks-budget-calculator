@@ -19,7 +19,7 @@ function App() {
     <>
       <Alert />
       <h1>Budget Calculator</h1>
-      <main classNamete="App">
+      <main className="App">
       <ExpenseForm />
       <ExpenseList  expenses={expenses}/>
       </main>
