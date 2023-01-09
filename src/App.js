@@ -1,5 +1,6 @@
 import React, { useState} from "react";
 import "./App.css";
+import {Alert} from "./components/Alert"
 import { ExpenseForm } from "./components/ExpenseForm";
 import { ExpenseList } from "./components/ExpenseList";
 import uuid from 'uuid/v4'
@@ -16,6 +17,7 @@ function App() {
   const [expenses,setExpenses] = useState(initialExpenses)
   const [charge,setCharge] = useState('');
   const [amount,setAmount] = useState('');
+  const [alert,setAlert] = useState({show:false});
 
 
   //**************************Functionality********************************** */
@@ -37,13 +39,24 @@ function App() {
         setExpenses([...expenses,singleExpense])
         setCharge("");
         setAmount("");
+        handleALert({type:'success',text:'item added'})
+
       } else {
-        //handle Alert
+        handleALert({type:'danger',text:`charge can't be empty value and amount value has to be bigger than zero`})
       }
     }
 
+    const handleALert = ({type,text}) => {
+        setAlert({show:true,type,text})
+        setTimeout(()=>{
+          setAlert({show:false})
+        },5000)
+    }
+
+    // clear all items
   return (
     <>
+    {alert.show && <Alert type={alert.type} text={alert.text} /> }
       <h1>Budget Calculator</h1>
       <main className="App">
       <ExpenseForm 
