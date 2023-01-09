@@ -1,7 +1,9 @@
-import React from 'react'
+import React from 'react';
 
-export const Alert = ({type,text}) => {
+export const Alert = ({ type, text }) => {
   return (
-    <div className={`alert alert-${type}`}>{text}</div>
-  )
-}
+    <div className={`alert alert-${type}`}>
+      {text}
+    </div>
+  );
+};
